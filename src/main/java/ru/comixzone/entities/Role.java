@@ -3,6 +3,7 @@ package ru.comixzone.entities;
 /**
  * Created by Mickey on 14.06.2019.
  */
+
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;

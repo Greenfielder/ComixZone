@@ -22,7 +22,7 @@ public class ComixService {
     }
 
     public List<Comix> getAllComixList() {
-        return (List<Comix>)comixRepository.findAll();
+        return (List<Comix>) comixRepository.findAll();
     }
 
     public void addComix(Comix comix) {

@@ -3,6 +3,7 @@ package ru.comixzone.services;
 /**
  * Created by Mickey on 14.06.2019.
  */
+
 import org.springframework.security.core.userdetails.UserDetailsService;
 import ru.comixzone.entities.SystemUser;
 
