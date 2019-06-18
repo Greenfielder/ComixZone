@@ -29,6 +29,10 @@ public class ComixService {
         comixRepository.save(comix);
     }
 
+    public void removeById(Long id) {
+        comixRepository.deleteById(id);
+    }
+
     public ComixService() {
     }
 

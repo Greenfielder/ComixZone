@@ -42,11 +42,17 @@ public class UserServiceJpaImpl implements UserService {
 
     @Override
     @Transactional
-    public SystemUser findByUserName(String username) {
-        User user = userRepository.findOneByUserName(username);
-        return new SystemUser(user.getUserName(), user.getPassword(),
-                user.getFirstName(), user.getLastName(), user.getEmail(), user.getRoles());
+    public User findByUserName(String userName) {
+        return userRepository.findOneByUserName(userName);
     }
+
+//    @Override
+//    @Transactional
+//    public SystemUser findByUserName(String username) {
+//        User user = userRepository.findOneByUserName(username);
+//        return new SystemUser(user.getUserName(), user.getPassword(),
+//                user.getFirstName(), user.getLastName(), user.getEmail(), user.getRoles());
+//    }
 
     @Override
     @Transactional
@@ -76,7 +82,7 @@ public class UserServiceJpaImpl implements UserService {
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        SystemUser user = findByUserName(userName);
+        User user = findByUserName(userName);
         if (user == null) {
             throw new UsernameNotFoundException("Invalid username or password");
         }
