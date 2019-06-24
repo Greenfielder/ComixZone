@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="admin/fragments/header :: head"></head>
+
+<body class="bg-light">
+
+<div th:replace="admin/fragments/header :: header"></div>
+
+<div class="d-flex">
+    <div th:replace="admin/fragments/sidebar :: sidebar"></div>
+
+    <div class="content p-4">
+        <h2 class="mb-4">Comix administration page</h2>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="container">
+                    <h1>Comix List</h1>
+                    <hr>
+                    <div class="container">
+                        <a class="btn btn-info" th:href="'/admin/comixbook/add/'" role="button">Add comix</a>
+                    </div>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                        <tr class="thead-dark">
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Description</td>
+                            <td>Year</td>
+                            <td>Operation</td>
+                        </tr>
+
+                        </thead>
+
+                        <tr class="thead-dark" th:each="comix : ${comixList}" th:attr="entryIndex=${comix.id}">
+                            <td th:text="${comix.id}"/>
+                            <td th:text="${comix.name}"/>
+                            <td th:text="${comix.description}"/>
+                            <td th:text="${comix.year}"/>
+                            <td>
+                            <!--<td sec:authorize="hasRole('ADMIN')">-->
+                                <a class="btn btn-danger" th:href="'/admin/comixbook/remove/' + ${comix.id}" role="button">Remove</a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/admin/js/jquery.min.js}"></script>
+<script th:src="@{/admin/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/admin/js/bootadmin.min.js}"></script>
+
+</body>
+</html>

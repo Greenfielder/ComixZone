@@ -34,7 +34,7 @@ public class ComixController {
         return "comix-list";
     }
 
-    @RequestMapping(path="/add", method= RequestMethod.GET)
+    @RequestMapping(path = "/add", method = RequestMethod.GET)
     public String showAddForm(Model model) {
         Comix comix = new Comix();
         comix.setName("Unknown");
@@ -42,7 +42,7 @@ public class ComixController {
         return "add-comix-form";
     }
 
-    @RequestMapping(path="/add", method=RequestMethod.POST)
+    @RequestMapping(path = "/add", method = RequestMethod.POST)
     public String showAddForm(Comix comix) {
         comixService.addComix(comix);
         return "redirect:/comix/list";

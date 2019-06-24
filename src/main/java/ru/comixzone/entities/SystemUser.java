@@ -3,6 +3,7 @@ package ru.comixzone.entities;
 /**
  * Created by Mickey on 14.06.2019.
  */
+
 import ru.comixzone.entities.Role;
 import ru.comixzone.entities.User;
 

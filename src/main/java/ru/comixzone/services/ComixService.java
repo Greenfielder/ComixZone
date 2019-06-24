@@ -22,11 +22,15 @@ public class ComixService {
     }
 
     public List<Comix> getAllComixList() {
-        return (List<Comix>)comixRepository.findAll();
+        return (List<Comix>) comixRepository.findAll();
     }
 
     public void addComix(Comix comix) {
         comixRepository.save(comix);
+    }
+
+    public void removeById(Long id) {
+        comixRepository.deleteById(id);
     }
 
     public ComixService() {
